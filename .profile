@@ -26,4 +26,8 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# set terminal for i3
 export TERMINAL="kitty"
+
+# set SSH socket (for use with systemd task that runs ssh-agent)
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
