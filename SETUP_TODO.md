@@ -1,0 +1,1 @@
+- Cursor gestures, 3 fingers = middle mouse click
