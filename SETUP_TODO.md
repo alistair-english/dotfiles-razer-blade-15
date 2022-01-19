@@ -1,1 +1,4 @@
-- Cursor gestures, 3 fingers = middle mouse click
+- figure out why font awesome isnt getting picked up (rofi, other places?)
+- Cursor gestures, 3 fingers = middle mouse click, pinch zoom
+- media keys and function keys
+- remap F12 + Insert to HOME and END
