@@ -53,12 +53,14 @@ prompt {
   text-color: @blue;
 }
 
+
 textbox-prompt-icon {
   font: @prompt-font;
   expand: false;
-  str: ":";
+  str: " ";
   text-color: @text-alt;
 }
+
 
 entry {
   font: @prompt-font;
