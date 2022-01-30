@@ -1,6 +1,6 @@
 * {
   black: #282C34;
-  black-transparent: #282C34F0;
+  dark-black-transparent: #14161aF0;
   red: #E06C75;
   green: #98C379;
   yellow: #E5C07B;
@@ -23,7 +23,7 @@ window {
   width:  50%;
   height: 20%;
   anchor: south;
-  background-color: @black-transparent;
+  background-color: @dark-black-transparent;
 }
 
 mainbox {
