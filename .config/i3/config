@@ -195,7 +195,7 @@ bindsym $mod+l exec i3lock -c 282C34
 exec --no-startup-id picom
 exec --no-startup-id feh --no-fehbg --bg-scale ~/.wallpaper.png
 # dunst is automatically started by dbus-daemon so no need to run it here
-exec --no-startup-id polybar top
+exec --no-startup-id polybar --reload top
 # exec --no-startup-id nm-applet
 # exec --no-startup-id blueman-applet
 

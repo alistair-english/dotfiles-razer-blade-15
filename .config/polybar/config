@@ -22,6 +22,8 @@
     margin-top = 0
 
 [settings]
+    screenchange-reload = true
+    
     ; Global fallback values used by all module formats
     format-margin = 1
 
