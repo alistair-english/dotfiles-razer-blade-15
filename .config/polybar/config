@@ -1,0 +1,265 @@
+; Colours from onedark atom theme
+[color]
+    black_01 = #282C34
+    dark_black = #14161a
+    red_02 = #E06C75
+    green_03 = #98C379
+    yellow_04 = #E5C07B
+    blue_05 = #61AFEF
+    indigo_06 = #C678DD
+    aqua_07 = #56B6C2
+    grey_08 = #ABB2BF
+
+    transparent = #00000000
+
+[global/wm]
+    ; Adjust the _NET_WM_STRUT_PARTIAL top value
+    ;   Used for top aligned bars
+    margin-bottom = 0
+
+    ; Adjust the _NET_WM_STRUT_PARTIAL bottom value
+    ;   Used for bottom aligned bars
+    margin-top = 0
+
+[settings]
+    ; Global fallback values used by all module formats
+    format-margin = 1
+
+[bar/top]
+    bottom = false
+    fixed-center = true
+
+    width = 100%
+    height = 30
+
+    background = ${color.transparent}
+    foreground = ${color.grey_08}
+    border-color = ${color.transparent}
+
+    border-top-size = 10
+    border-bottom-size = 0  ; 0 cause wm adds gap below
+    border-left-size = 10 ; 0 cause spacing is taken care of by gobal spacing in [settings]
+    border-right-size = 20  ; 20 for tray spacing
+
+    ; the ";3" after the fonts is vertical offset
+    font-0 = Fira Code:regular:size=10;2
+    font-1 = la\-solid\-900:size=16;3
+    font-2 = la\-brands\-400:size=16;3
+    font-3 = la\-regular\-400:size=16;3
+
+    modules-left = date i3 music
+    modules-center = xwindow
+    modules-right = brightness audio battery cpu memory nvidia powermenu tray-label
+
+    separator = |
+
+    tray-position = right
+    ; transparent doesnt work here for some reason...
+    tray-background = ${color.black_01}
+
+[module/date]
+    type = internal/date
+
+    ; Seconds to sleep between updates
+    interval = 1.0
+
+    ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+    ; NOTE: if you want to use syntax tags here you need to use %%{...}
+    date =
+    date-alt = %d-%m-%Y
+
+    ; Optional time format
+    time = %H:%M:%S
+    time-alt =
+    
+    format = <label>
+    label =  %date%%time%
+
+[module/i3]
+    type = internal/i3
+
+    index-sort = true
+    enable-click = false
+    enable-scroll = false
+
+    ; Available tags:
+    ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+    ;   <label-mode> (default)
+    format = <label-state> <label-mode>
+
+    ; Available tokens:
+    ;   %mode%
+    ; Default: %mode%
+    label-mode = %mode%
+    label-mode-padding = 1
+    label-mode-margin = 1
+    label-mode-background = ${color.red_02}
+    label-mode-foreground = ${color.black_01}
+
+    ; Available tokens:
+    ;   %name%
+    ;   %icon%
+    ;   %index%
+    ;   %output%
+    ; Default: %icon%  %name%
+    label-focused = %index%
+    label-focused-background = ${color.transparent}
+    label-focused-foreground = ${color.blue_05}
+
+
+    ; Available tokens:
+    ;   %name%
+    ;   %icon%
+    ;   %index%
+    ;   %output%
+    ; Default: %icon%  %name%
+    label-unfocused = %index%
+    label-unfocused-background = ${color.transparent}
+    label-unfocused-foreground = ${color.grey_08}
+
+    ; Available tokens:
+    ;   %name%
+    ;   %icon%
+    ;   %index%
+    ;   %output%
+    ; Default: %icon%  %name%
+    label-visible = %index%
+    label-visible-background = ${color.transparent}
+    label-visible-foreground = ${color.grey_08}
+
+    ; Available tokens:
+    ;   %name%
+    ;   %icon%
+    ;   %index%
+    ;   %output%
+    ; Default: %icon%  %name%
+    label-urgent = %index%
+    label-urgent-background = ${color.transparent}
+    label-urgent-foreground = ${color.red_02}
+
+    label-separator = "  "
+
+[module/music]
+    type = custom/script
+    interval = 0.5
+
+    exec = ~/.config/polybar/music_status.sh
+    format = <label>
+    label = %output%
+
+    click-left = playerctl play-pause
+
+[module/xwindow]
+    type = internal/xwindow
+
+    format =  <label>
+    label = %title%
+    label-maxlen = 50
+
+[module/brightness]
+    type = custom/script
+    interval = 0.5
+
+    exec = xbacklight -get
+    format = <label>
+    label =  %output%%
+
+[module/audio]
+    type = internal/pulseaudio
+    use-ui-max = false
+
+    format-volume = <ramp-volume> <label-volume>
+    format-muted = <label-muted>
+
+    label-volume = %percentage%%
+    label-muted = 
+
+    ramp-volume-0 = 
+    ramp-volume-1 = 
+
+[module/battery]
+    type = internal/battery
+
+    full-at = 99
+
+    battery = BAT0
+    adapter = AC0
+
+    format-charging = <ramp-capacity> <label-charging>
+    format-discharging = <ramp-capacity> <label-discharging>
+    format-full = <ramp-capacity>
+
+    label-charging =  %percentage%%
+    label-discharging = %percentage%%
+
+    ramp-capacity-0 = 
+    ramp-capacity-1 = 
+    ramp-capacity-2 = 
+    ramp-capacity-3 = 
+    ramp-capacity-4 = 
+
+[module/cpu]
+    type = internal/cpu
+    format = <label>
+    label =  %percentage%%
+
+[module/memory]
+    type = internal/memory
+    format = <label>
+    label =  %percentage_used%%
+
+[module/nvidia]
+    type = custom/script
+    exec = nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits
+    interval = 1
+    
+    format = <label>
+    label =  %output%%
+
+[module/powermenu]
+    type = custom/menu
+
+    expand-right = false
+
+    label-open = 
+    label-open-foreground = ${color.red_02}
+
+    label-close = 
+    label-close-padding = 1
+
+    ; ----- choose menu -----
+    menu-0-0 = 
+    menu-0-0-exec = #powermenu.open.1
+    menu-0-0-padding = 1
+    menu-0-0-foreground = ${color.yellow_04}
+
+    menu-0-1 = 
+    menu-0-1-exec = #powermenu.open.2
+    menu-0-1-padding = 1
+    menu-0-1-foreground = ${color.red_02}
+
+    ; ----- reboot confirm -----
+    menu-1-0 = c
+    menu-1-0-exec = #powermenu.open.0
+    menu-1-0-padding = 1
+    menu-1-0-foreground = ${color.grey_08}
+
+    menu-1-1 = 
+    menu-1-1-exec = reboot
+    menu-1-1-padding = 1
+    menu-1-1-foreground = ${color.yellow_04}
+
+    ; ----- poweroff confirm -----
+    menu-2-0 = 
+    menu-2-0-exec = shutdown now
+    menu-2-0-padding = 1
+    menu-2-0-foreground = ${color.red_02}
+
+    menu-2-1 = c
+    menu-2-1-exec = #powermenu.open.0
+    menu-2-1-padding = 1
+    menu-2-1-foreground = ${color.grey_08}
+
+[module/tray-label]
+    type = custom/text
+    content = ""
