@@ -1,108 +1,68 @@
-/*
- * ROFI One Dark
- *
- * Based on OneDark.vim (https://github.com/joshdick/onedark.vim)
- *
- * Author: Benjamin Stauss
- * User: me-benni
- *
- * Modified: Alistair English
- * User: alistair-english
- *
- */
-
-
 * {
-  black:      #000000;
-  red:        #eb6e67;
-  green:      #95ee8f;
-  yellow:     #f8c456;
-  blue:       #6eaafb;
-  mangenta:   #d886f3;
-  cyan:       #6cdcf7;
-  emphasis:   #50536b;
-  text:       #dfdfdf;
-  text-alt:   #b2b2b2;
-  fg:         #abb2bf;
-  bg:         #282c34;
+  black: #282C34;
+  black-transparent: #282C34F0;
+  red: #E06C75;
+  green: #98C379;
+  yellow: #E5C07B;
+  blue: #61AFEF;
+  indigo: #C678DD;
+  aqua: #56B6C2;
+  grey: #ABB2BF;
 
-  spacing: 0;
   background-color: transparent;
+  text-color: @grey;
 
-  font: "IBM Plex Sans 14";
-  prompt-font: "IBM Plex Sans 18";
-  text-color: @text;
+  font: "Fira Code 14";
+  prompt-font: "la-solid-900 18";
+  entry-font: "Fira Code 16";
 }
 
 window {
   transparency: "real";
-  fullscreen: true;
-  background-color: #282c34df;
+  fullscreen: false;
+  width:  50%;
+  height: 20%;
+  anchor: south;
+  background-color: @black-transparent;
 }
 
 mainbox {
-  padding: 30% 30%;
+  padding: 1% 1%;
 }
 
 inputbar {
-  margin: 0px 0px 20px 0px;
+  padding: 0px 0px 10px 0px;
+  margin: 0px 0px 10px 0px;
   children: [textbox-prompt-icon, entry, case-indicator];
+  
+  border: 0px 0px 1px 0px;
+  border-color: @blue;
 }
-
-prompt {
-  text-color: @blue;
-}
-
 
 textbox-prompt-icon {
   font: @prompt-font;
   expand: false;
-  str: " ";
-  text-color: @text-alt;
+  str: " ";
+  text-color: @grey;
+  padding: 1px 0px 0px 0px;
 }
 
-
 entry {
-  font: @prompt-font;
-  margin: 0px 10px;
+  font: @entry-font;
 }
 
 listview {
   spacing: 5px;
   dynamic: true;
   scrollbar: false;
+  cycle: false;
 }
 
 element {
   padding: 5px;
-  text-color: @text-alt;
-  highlight: bold #95ee8f; /* green */
-  border-radius: 3px;
 }
 
 element selected {
-  background-color: @emphasis;
-  text-color: @text;
-}
-
-element urgent, element selected urgent {
-  text-color: @red;
-}
-
-element active, element selected active {
-  text-color: @purple;
-}
-
-message {
-  padding: 5px;
-  border-radius: 3px;
-  background-color: @emphasis;
-  border: 1px;
-  border-color: @cyan;
-}
-
-button selected {
-  padding: 5px;
-  border-radius: 3px;
-  background-color: @emphasis;
+  background-color: @green;
+  text-color: @black;
 }
