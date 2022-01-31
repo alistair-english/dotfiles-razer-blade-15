@@ -161,7 +161,7 @@
 
 [module/brightness]
     type = custom/script
-    interval = 0.5
+    interval = 0.1
 
     exec = xbacklight -get
     format = <label>
