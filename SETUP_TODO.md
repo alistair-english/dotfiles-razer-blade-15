@@ -1,3 +1,2 @@
 - Cursor gestures, 3 fingers = middle mouse click, pinch zoom
-- media keys and function keys
-- remap F12 + Insert to HOME and END
+- Screenshot

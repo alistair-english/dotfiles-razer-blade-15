@@ -1,0 +1,4 @@
+keysym F12 = Home
+keysym Insert = End
+keysym F11 = F12
+
