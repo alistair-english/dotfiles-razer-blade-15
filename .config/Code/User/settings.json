@@ -23,7 +23,7 @@
 
     "material-icon-theme.saturation": 0.8,
 
-    "colorize.languages": ["ini", "plaintext"],
+    "colorize.languages": ["ini", "plaintext", "properties"],
 
     "oneDarkPro.bold": true,
     "oneDarkPro.italic": false,

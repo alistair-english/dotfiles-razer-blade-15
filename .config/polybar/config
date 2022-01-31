@@ -2,6 +2,7 @@
 [color]
     black_01 = #282C34
     dark_black = #14161a
+    background_black = #1A1D23
     red_02 = #E06C75
     green_03 = #98C379
     yellow_04 = #E5C07B
@@ -38,9 +39,9 @@
     foreground = ${color.grey_08}
     border-color = ${color.transparent}
 
-    border-top-size = 10
+    border-top-size = 8
     border-bottom-size = 0  ; 0 cause wm adds gap below
-    border-left-size = 10 ; 0 cause spacing is taken care of by gobal spacing in [settings]
+    border-left-size = 10 ; 10 cause spacing is added by gobal spacing in [settings]
     border-right-size = 20  ; 20 for tray spacing
 
     ; the ";3" after the fonts is vertical offset
@@ -57,7 +58,7 @@
 
     tray-position = right
     ; transparent doesnt work here for some reason...
-    tray-background = ${color.black_01}
+    tray-background = ${color.background_black}
 
 [module/date]
     type = internal/date
