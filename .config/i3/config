@@ -177,6 +177,9 @@ bindsym $mod+space exec rofi -show combi
 # Lock Screen
 bindsym $mod+l exec i3lock -c 282C34
 
+# Calendar
+bindsym $mod+c exec gsimplecal
+
 # Audio Control
 # bindsym $mod+comma exec --no-startup-id playerctl previous
 # bindsym $mod+period exec --no-startup-id playerctl next
