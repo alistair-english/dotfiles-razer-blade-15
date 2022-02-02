@@ -213,11 +213,13 @@
 
 [module/nvidia]
     type = custom/script
-    exec = nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits
+    exec = ~/.config/polybar/nvidia_status.sh
     interval = 1
+
+    click-left = kitty /home/alistair/.config/polybar/nvidia_switch.sh
     
     format = <label>
-    label =  %output%%
+    label =  %output%
 
 [module/powermenu]
     type = custom/menu

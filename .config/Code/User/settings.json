@@ -28,5 +28,9 @@
     "oneDarkPro.bold": true,
     "oneDarkPro.italic": false,
 
-    "gitlens.codeLens.enabled": false,    
+    "gitlens.codeLens.enabled": false,
+
+    "[plaintext,markdown]": {
+        "editor.wordWrap": "bounded",
+    },
 }
