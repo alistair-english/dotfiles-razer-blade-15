@@ -1,2 +1,0 @@
-- Cursor gestures, 3 fingers = middle mouse click, pinch zoom
-- Screenshot
