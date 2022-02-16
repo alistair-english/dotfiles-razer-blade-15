@@ -11,6 +11,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias config='/usr/bin/git --git-dir=/home/alistair/.cfg/ --work-tree=/home/alistair'
+alias ssh='kitty +kitten ssh'
+alias matlab='matlab -nodesktop -nosplash'
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
