@@ -64,5 +64,8 @@ element {
 
 element selected {
   background-color: @green;
+}
+
+element-text selected {
   text-color: @black;
 }
