@@ -14,12 +14,11 @@
     "files.associations": {
         "config": "ini",
         "dunstrc": "ini",
-        "*.world": "xml"
+        "*.world": "xml",
+        "conda_requirements": "pip-requirements"
     },
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 100,
-
-    "window.zoomLevel": 0,
 
     "material-icon-theme.saturation": 0.8,
 
@@ -33,4 +32,23 @@
     "[plaintext,markdown]": {
         "editor.wordWrap": "bounded",
     },
+    "terminal.integrated.inheritEnv": false,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "ltex.additionalRules.motherTongue": "en-AU",
+    "ltex.language": "en-AU",
+    "[latex]": {
+        "editor.wordWrap": "wordWrapColumn"
+    },
+    "wordcounter.languages": [
+        "latex"
+    ],
+    "wordcounter.side.left": [
+        "word",
+        "paragraph"
+    ],
+    "matlab.matlabpath": "/usr/local/MATLAB/R2021b/bin/matlab",
+    "matlab.mlintpath": "/usr/local/MATLAB/R2021b/bin/glnxa64/mlint",
+    "cmake.configureOnOpen": false,
+    "python.analysis.autoImportCompletions": false
 }

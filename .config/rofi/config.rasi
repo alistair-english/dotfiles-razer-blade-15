@@ -1,5 +1,6 @@
 configuration {
 	modi: "combi";
 	combi-modi: "window,drun";
-	theme: "./rofi-theme.rasi";
 }
+
+@theme "./rofi-theme.rasi"

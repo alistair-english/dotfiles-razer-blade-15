@@ -30,3 +30,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+export CONDA_BASE=$(conda info --base)
+
